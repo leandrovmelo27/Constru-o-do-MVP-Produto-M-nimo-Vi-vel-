@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Leandro Veloso</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Sobre */
+    #sobre {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .perfil {
+      margin-bottom: 20px;
+    }
+
+    .perfil img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #333;
+    }
+
+    /* Projetos */
+    #projetos {
+      padding: 2rem;
+    }
+
+    #lista-projetos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <h1>Portfólio - Leandro Veloso</h1>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <div class="perfil">
+      <!-- FOTO DE PERFIL -->
+      <img src="foto.jpg.jpeg" alt="Foto de Leandro Veloso">
+    </div>
+
+    <h2>Sobre Mim</h2>
+    <p>Sou bacharel em Administração, com pós-graduação em Gestão de Marketing e Negócios e certificação CPA-20 pela ANBIMA. Minha trajetória combina uma sólida base em gestão com experiência prática no setor de marketing de uma empresa de telecomunicações, onde desenvolvi habilidades estratégicas em comunicação, relacionamento com o cliente e análise de resultados.</p>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos">
+    <h2>Meus Projetos</h2>
+    <div id="lista-projetos"></div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 - Leandro Veloso</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="javascript.js">
+    
+    const projetos = [
+      {
+        nome: "Projeto 1",
+         descricao: "SIGEC-Amarante Sistema Integrado de Gestão Educacional da Cooperativa de Amarante",
+        link: "https://www.figma.com/make/gVZ92WX11o9Y56n2Gu4NQ5/Sistema-Integrado-de-Gest%C3%A3o?fullscreen=1&t=gvmEPuOY7BEf5JNi-1"
+      },
+    ];
+
+    const lista = document.getElementById("lista-projetos");
+
+    projetos.forEach(projeto => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+
+      card.innerHTML = `
+        <h3>${projeto.nome}</h3>
+        <p>${projeto.descricao}</p>
+        <a href="${projeto.link}">Ver projeto</a>
+      `;
+
+      lista.appendChild(card);
+    });
+      </script>
+
+</body>
+</html>
